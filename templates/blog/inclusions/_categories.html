@@ -1,0 +1,15 @@
+<div class="widget widget-category">
+  <h3 class="widget-title">分类</h3>
+  <ul>
+    {% for ret in rets %}
+      <li>
+        <a href="{% url 'blog:category' ret.category.pk %}">
+            {{ ret.category.name }}
+            <span class="post-count">{{ ret.num }}</span>
+        </a>
+      </li>
+    {% empty %}
+      暂无分类！
+    {% endfor %}
+  </ul>
+</div>
